@@ -1,0 +1,5 @@
+asset/videos/
+*.mp4
+*.avi
+*.mov
+.vscode/

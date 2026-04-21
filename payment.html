@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Payment</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-dark text-white">
+
+<div class="container mt-5">
+<div class="card p-4 bg-secondary">
+
+<h2 class="text-center">Payment</h2>
+
+<form id="payment-form">
+
+<div class="mb-3">
+<label>Name</label>
+<input type="text" class="form-control" required>
+</div>
+
+<div class="mb-3">
+<label>Total Amount</label>
+<input type="text" id="amount" class="form-control" readonly>
+</div>
+
+<button class="btn btn-success w-100">Pay Now</button>
+
+</form>
+
+</div>
+</div>
+
+<script>
+const amount = localStorage.getItem("totalAmount");
+document.getElementById("amount").value = "₹" + amount;
+
+document.getElementById("payment-form").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  alert("✅ Payment Done Successfully!");
+
+  localStorage.removeItem("totalAmount");
+
+  window.location.href = "pizza.html";
+});
+</script>
+
+</body>
+</html>

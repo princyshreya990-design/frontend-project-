@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pizza Menu</title>
+
+<style>
+body {
+  font-family: Arial;
+  background: #0c0b0b;
+  color: #fff;
+}
+
+h1 { text-align: center; }
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.menu-item {
+  background: #1e1c1c;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.menu-img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+
+.cart-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 10px;
+  background: blue;
+  color: white;
+  border: none;
+}
+
+.cart {
+  display: none;
+  background: #222;
+  padding: 15px;
+  position: fixed;
+  top: 60px;
+  left: 20px;
+  width: 250px;
+}
+
+.show-cart { display: block; }
+
+button { margin-top: 5px; }
+</style>
+</head>
+
+<body>
+
+<button class="cart-btn" id="show-cart">View Cart</button>
+
+<h1>Our Pizza Varieties</h1>
+
+<div class="container">
+
+<!-- ALL ITEMS -->
+
+<div class="menu-item" data-id="1" data-name="Corn Pizza" data-price="150">
+<img src="asset/image/corn pizza.jpg" class="menu-img">
+<div>Corn Pizza</div>
+<div>₹150</div>
+<button>Add to Cart</button>
+</div>
+
+<div class="menu-item" data-id="2" data-name="Italian Pizza" data-price="399">
+<img src="asset/image/italian pizza.jpg" class="menu-img">
+<div>Italian Pizza</div>
+<div>₹399</div>
+<button>Add to Cart</button>
+</div>
+
+<div class="menu-item" data-id="3" data-name="Paneer Tikka Pizza" data-price="250">
+<img src="asset/image/paneer tikaa pizza.jpg" class="menu-img">
+<div>Paneer Tikka Pizza</div>
+<div>₹250</div>
+<button>Add to Cart</button>
+</div>
+
+<div class="menu-item" data-id="4" data-name="Veggies Pizza" data-price="120">
+<img src="asset/image/vegies pizza.webp" class="menu-img">
+<div>Veggies Pizza</div>
+<div>₹120</div>
+<button>Add to Cart</button>
+</div>
+
+<div class="menu-item" data-id="5" data-name="Piaci Pizza" data-price="180">
+<img src="asset/image/piaci pizza.jpg" class="menu-img">
+<div>Piaci Pizza</div>
+<div>₹180</div>
+<button>Add to Cart</button>
+</div>
+
+<!-- repeated items (unique id ke saath) -->
+
+<div class="menu-item" data-id="6" data-name="Veggies Pizza" data-price="120">
+<img src="asset/image/vegies pizza.webp" class="menu-img">
+<div>Veggies Pizza</div>
+<div>₹120</div>
+<button>Add to Cart</button>
+</div>
+
+<div class="menu-item" data-id="7" data-name="Veggies Pizza" data-price="120">
+<img src="asset/image/vegies pizza.webp" class="menu-img">
+<div>Veggies Pizza</div>
+<div>₹120</div>
+<button>Add to Cart</button>
+</div>
+
+<div class="menu-item" data-id="8" data-name="Veggies Pizza" data-price="120">
+<img src="asset/image/vegies pizza.webp" class="menu-img">
+<div>Veggies Pizza</div>
+<div>₹120</div>
+<button>Add to Cart</button>
+</div>
+
+<div class="menu-item" data-id="9" data-name="Veggies Pizza" data-price="120">
+<img src="asset/image/vegies pizza.webp" class="menu-img">
+<div>Veggies Pizza</div>
+<div>₹120</div>
+<button>Add to Cart</button>
+</div>
+
+<div class="menu-item" data-id="10" data-name="Paneer Tikka Pizza" data-price="250">
+<img src="asset/image/paneer tikaa pizza.jpg" class="menu-img">
+<div>Paneer Tikka Pizza</div>
+<div>₹250</div>
+<button>Add to Cart</button>
+</div>
+
+<div class="menu-item" data-id="11" data-name="Corn Pizza" data-price="150">
+<img src="asset/image/corn pizza.jpg" class="menu-img">
+<div>Corn Pizza</div>
+<div>₹150</div>
+<button>Add to Cart</button>
+</div>
+<div class="menu-item" data-id="9" data-name="Veggies Pizza" data-price="120">
+<img src="asset/image/vegies pizza.webp" class="menu-img">
+<div>Veggies Pizza</div>
+<div>₹120</div>
+<button>Add to Cart</button>
+</div>
+
+<div class="menu-item" data-id="10" data-name="Paneer Tikka Pizza" data-price="250">
+<img src="asset/image/paneer tikaa pizza.jpg" class="menu-img">
+<div>Paneer Tikka Pizza</div>
+<div>₹250</div>
+<button>Add to Cart</button>
+</div>
+
+<div class="menu-item" data-id="11" data-name="Corn Pizza" data-price="150">
+<img src="asset/image/corn pizza.jpg" class="menu-img">
+<div>Corn Pizza</div>
+<div>₹150</div>
+<button>Add to Cart</button>
+</div>
+<div class="menu-item" data-id="9" data-name="Veggies Pizza" data-price="120">
+<img src="asset/image/vegies pizza.webp" class="menu-img">
+<div>Veggies Pizza</div>
+<div>₹120</div>
+<button>Add to Cart</button>
+</div>
+
+<div class="menu-item" data-id="10" data-name="Paneer Tikka Pizza" data-price="250">
+<img src="asset/image/paneer tikaa pizza.jpg" class="menu-img">
+<div>Paneer Tikka Pizza</div>
+<div>₹250</div>
+<button>Add to Cart</button>
+</div>
+
+<div class="menu-item" data-id="11" data-name="Corn Pizza" data-price="150">
+<img src="asset/image/corn pizza.jpg" class="menu-img">
+<div>Corn Pizza</div>
+<div>₹150</div>
+<button>Add to Cart</button>
+</div>
+<div class="menu-item" data-id="9" data-name="Veggies Pizza" data-price="120">
+<img src="asset/image/vegies pizza.webp" class="menu-img">
+<div>Veggies Pizza</div>
+<div>₹120</div>
+<button>Add to Cart</button>
+</div>
+
+<div class="menu-item" data-id="10" data-name="Paneer Tikka Pizza" data-price="250">
+<img src="asset/image/paneer tikaa pizza.jpg" class="menu-img">
+<div>Paneer Tikka Pizza</div>
+<div>₹250</div>
+<button>Add to Cart</button>
+</div>
+
+<div class="menu-item" data-id="11" data-name="Corn Pizza" data-price="150">
+<img src="asset/image/corn pizza.jpg" class="menu-img">
+<div>Corn Pizza</div>
+<div>₹150</div>
+<button>Add to Cart</button>
+</div>
+</div>
+
+<!-- CART -->
+<div class="cart" id="cart">
+<h3>Your Cart</h3>
+<div id="cart-items">Cart is empty</div>
+<div>Total: ₹<span id="cart-total">0</span></div>
+
+<button id="clear-cart">Clear</button>
+<button id="next-btn">Next</button>
+</div>
+
+<script>
+const cart = {};
+const items = document.querySelectorAll(".menu-item");
+
+items.forEach(item => {
+  item.querySelector("button").addEventListener("click", () => {
+    const id = item.dataset.id;
+    const name = item.dataset.name;
+    const price = parseInt(item.dataset.price);
+
+    if(!cart[id]) cart[id] = {name, price, qty:1};
+    else cart[id].qty++;
+
+    renderCart();
+  });
+});
+
+document.getElementById("show-cart").onclick = () => {
+  document.getElementById("cart").classList.toggle("show-cart");
+};
+
+document.getElementById("clear-cart").onclick = () => {
+  for(let key in cart) delete cart[key];
+  renderCart();
+};
+
+document.getElementById("next-btn").onclick = () => {
+  const total = getTotal();
+
+  if(total === 0){
+    alert("Cart empty!");
+    return;
+  }
+
+  localStorage.setItem("totalAmount", total);
+  window.location.href = "payment.html";
+};
+
+function renderCart(){
+  const cartItems = document.getElementById("cart-items");
+  cartItems.innerHTML = "";
+
+  let total = 0;
+
+  for(let id in cart){
+    const item = cart[id];
+    total += item.price * item.qty;
+
+    const div = document.createElement("div");
+    div.innerText = `${item.name} x ${item.qty} = ₹${item.price * item.qty}`;
+    cartItems.appendChild(div);
+  }
+
+  if(total === 0) cartItems.innerText = "Cart is empty";
+
+  document.getElementById("cart-total").innerText = total;
+}
+
+function getTotal(){
+  let total = 0;
+  for(let id in cart){
+    total += cart[id].price * cart[id].qty;
+  }
+  return total;
+}
+</script>
+
+</body>
+</html>

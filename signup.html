@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up | Crave Corner</title>
+  <link rel="stylesheet" href="css/signup.css">
+</head>
+<body>
+
+  <div class="signup-container">
+    <h2>Create Account</h2>
+
+    <!-- IMPORTANT: action + method -->
+    <form action="signup.php" method="POST">
+
+      <div class="input-group">
+        <label>Full Name</label>
+        <input type="text" name="name" placeholder="Enter your full name" required>
+      </div>
+
+      <div class="input-group">
+        <label>Date of Birth</label>
+        <input type="date" name="dob" required>
+      </div>
+
+      <div class="input-group">
+        <label>Email Address</label>
+        <input type="email" name="email" placeholder="Enter your email" required>
+      </div>
+
+      <div class="input-group">
+        <label>Address</label>
+        <textarea name="address" placeholder="Enter your address" required></textarea>
+      </div>
+
+      <div class="input-group password-container">
+        <label>Password</label>
+        <input type="password" id="password" name="password" placeholder="Create a password" required>
+        <span onclick="togglePassword()">👁</span>
+      </div>
+
+      <button type="submit">Sign Up</button>
+
+      <div class="extra-links">
+        <p>Already have an account? <a href="login.html">Login</a></p>
+      </div>
+
+    </form>
+  </div>
+
+  <script>
+    function togglePassword() {
+      const pwd = document.getElementById("password");
+      pwd.type = pwd.type === "password" ? "text" : "password";
+    }
+  </script>
+
+</body>
+</html>
